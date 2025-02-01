@@ -1,0 +1,37 @@
+[core]
+	excludesfile = $HOME/.gitignore_global
+	autocrlf = input
+
+[commit]
+	template = $HOME/.stCommitMsg
+
+[alias]
+  tree = log --graph --pretty=format:'%x09%C(auto) %h %Cgreen %ar %Creset%x09by"%C(cyan ul)%an%Creset" %x09%C(auto)%s %d'
+  mode = checkout develop
+  moma = checkout main
+  mo = checkout master
+  mo = checkout
+  me = merge
+  rb = rebase
+  rbi = rebase -i
+  co = commit -m
+  coa = commit --amend
+  ad = add
+  aa = add .
+  difw = diff --word
+  st = status
+  cr = checkout -b
+  lol = branch 
+  rel = branch -a
+  de = branch -d
+  def = branch -D
+  ref = reflog
+  fe = fetch -p -f
+  ps = push
+  psf = push --force-with-lease
+  pl = pull 
+  inps = push --set-upstream origin
+  cfl = config --list 
+
+[init]
+	defaultBranch = main
