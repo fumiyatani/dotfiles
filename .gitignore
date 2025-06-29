@@ -1,0 +1,259 @@
+# Dotfiles .gitignore
+# This file excludes common system files and auto-generated content
+
+# ==========================================
+# Operating System Files
+# ==========================================
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.AppleDouble
+.LSOverride
+.DocumentRevisions-V100
+.fseventsd
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ==========================================
+# Editor and IDE Files
+# ==========================================
+
+# Vim
+*.swp
+*.swo
+*~
+.viminfo
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ==========================================
+# Backup and Temporary Files
+# ==========================================
+
+# Backup files
+*.bak
+*.backup
+*.orig
+*.tmp
+*.temp
+*~
+
+# Log files
+*.log
+logs/
+
+# ==========================================
+# dotfiles specific
+# ==========================================
+
+# Installation scripts logs
+install.log
+setup.log
+
+# Personal configuration that shouldn't be shared
+local/
+private/
+*.local
+*.private
+
+# ==========================================
+# .claude/ Directory Management
+# ==========================================
+
+# Include specific files and directories
+!.claude/
+!.claude/CLAUDE.md
+!.claude/settings.json
+!.claude/commands/
+!.claude/commands/**
+
+# Exclude everything else in .claude/
+.claude/*
+!.claude/CLAUDE.md
+!.claude/settings.json
+!.claude/commands/
+
+# Common auto-generated files in .claude/
+.claude/cache/
+.claude/logs/
+.claude/temp/
+.claude/history/
+.claude/sessions/
+.claude/state/
+.claude/data/
+.claude/backups/
+.claude/*.cache
+.claude/*.log
+.claude/*.tmp
+.claude/*.lock
+.claude/.DS_Store
+
+# ==========================================
+# Development and Build Files
+# ==========================================
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+.pnp.*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+.pytest_cache/
+.coverage
+.venv/
+venv/
+env/
+
+# Ruby
+*.gem
+.bundle/
+vendor/bundle/
+.rbenv-version
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Rust
+target/
+Cargo.lock
+
+# ==========================================
+# Security and Credentials
+# ==========================================
+
+# SSH keys
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+*.pem
+*.key
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# API keys and tokens
+*.token
+*.secret
+secrets/
+credentials/
+
+# GPG
+*.asc
+*.gpg
+secring.*
+
+# ==========================================
+# Package Managers
+# ==========================================
+
+# Homebrew
+Brewfile.lock.json
+
+# pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ==========================================
+# Other Common Files
+# ==========================================
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Image files (usually not needed in dotfiles)
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.svg
+*.ico
+
+# Media files
+*.mp3
+*.mp4
+*.avi
+*.mov
+*.wav
+
+# Documents (if not intentionally included)
+*.pdf
+*.doc
+*.docx
+
+# ==========================================
+# Custom Additions
+# ==========================================
+
+# Add your custom ignore patterns here
+# Example:
+# my-custom-file.txt
+# custom-directory/
