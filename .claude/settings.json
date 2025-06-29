@@ -53,7 +53,8 @@
         "Bash(mysql:*)",
         "Bash(mongod:*)",
         "Bash(fvm flutter pub add:*)",
-        "Bash(flutter pub add:*)"
+        "Bash(flutter pub add:*)",
+        "Bash(firebase deploy:*)"
       ]
     }
   }
