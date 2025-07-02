@@ -104,36 +104,35 @@ private/
 *.private
 
 # ==========================================
-# .claude/ Directory Management
+# Claude Code Directory Management
 # ==========================================
 
-# Include specific files and directories
-!.claude/
-!.claude/CLAUDE.md
-!.claude/settings.json
-!.claude/commands/
-!.claude/commands/**
+# Include essential configuration files first
+!claude/.claude/CLAUDE.md
+!claude/.claude/settings.json
 
-# Exclude everything else in .claude/
-.claude/*
-!.claude/CLAUDE.md
-!.claude/settings.json
-!.claude/commands/
+# Exclude auto-generated Claude directories and files
+claude/.claude/ide/
+claude/.claude/projects/
+claude/.claude/statsig/
+claude/.claude/todos/
+claude/.claude/cache/
+claude/.claude/logs/
+claude/.claude/temp/
+claude/.claude/history/
+claude/.claude/sessions/
+claude/.claude/state/
+claude/.claude/data/
+claude/.claude/backups/
 
-# Common auto-generated files in .claude/
-.claude/cache/
-.claude/logs/
-.claude/temp/
-.claude/history/
-.claude/sessions/
-.claude/state/
-.claude/data/
-.claude/backups/
-.claude/*.cache
-.claude/*.log
-.claude/*.tmp
-.claude/*.lock
-.claude/.DS_Store
+# Exclude auto-generated file patterns
+claude/.claude/*.cache
+claude/.claude/*.log
+claude/.claude/*.tmp
+claude/.claude/*.lock
+claude/.claude/*.jsonl
+claude/.claude/*.cached*
+claude/.claude/.DS_Store
 
 # ==========================================
 # Development and Build Files
