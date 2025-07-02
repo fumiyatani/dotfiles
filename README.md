@@ -12,11 +12,7 @@ git clone <repo URL>
 
 2. GNU Stowをインストール
 ```bash
-# macOSの場合
 brew install stow
-
-# Ubuntuの場合
-sudo apt install stow
 ```
 
 3. Stowを使用してシンボリックリンクを作成
