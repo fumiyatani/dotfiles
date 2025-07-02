@@ -1,29 +1,33 @@
 # dotfiles
 
 ## 設定方法
+
+このリポジトリではGNU Stowを使用してシンボリックリンクを管理しています。
+
 1. 本リポジトリをホームディレクトリにクローンする
-```
+```bash
 cd ~/
 git clone <repo URL>
 ```
 
-2. 各スクリプトに実行権限を付与
+2. GNU Stowをインストール
+```bash
+# macOSの場合
+brew install stow
+
+# Ubuntuの場合
+sudo apt install stow
 ```
+
+3. Stowを使用してシンボリックリンクを作成
+```bash
 cd dotfiles/
-chmod +x setup_tmux_config.sh
-chmod +x setup_git_config.sh
-chmod +x setup_claude_code_config.sh
-
-[option]
-既存の .claude/ のリンクを確認
-./setup_claude_code_config.sh --verify
-
+stow .
 ```
 
-3. スクリプトの実行
-```
-./setup_tmux_config.sh
-./setup_git_config.sh
-./setup_claude_code_config.sh
-```
+## 設定内容
+
+- **Claude Code**: `.claude/` ディレクトリの設定
+- **Git**: `.gitconfig` と `.gitignore_global` の設定
+- **tmux**: `.tmux.conf` の設定
 
