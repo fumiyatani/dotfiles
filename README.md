@@ -21,6 +21,11 @@ cd dotfiles/
 stow .
 ```
 
+**変更した設定を反映させる**
+```bash
+stow -R <対象パッケージ>
+```
+
 ## 設定内容
 
 - **Claude Code**: `.claude/` ディレクトリの設定
