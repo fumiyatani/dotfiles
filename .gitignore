@@ -256,3 +256,34 @@ pip-delete-this-directory.txt
 # Example:
 # my-custom-file.txt
 # custom-directory/
+
+# ==========================================
+# Claude Code Project Root Directory
+# ==========================================
+
+# Include essential configuration files first
+!.claude/CLAUDE.md
+!.claude/settings.json
+
+# Exclude auto-generated Claude directories and files
+.claude/ide/
+.claude/projects/
+.claude/statsig/
+.claude/todos/
+.claude/cache/
+.claude/logs/
+.claude/temp/
+.claude/history/
+.claude/sessions/
+.claude/state/
+.claude/data/
+.claude/backups/
+
+# Exclude auto-generated file patterns
+.claude/*.cache
+.claude/*.log
+.claude/*.tmp
+.claude/*.lock
+.claude/*.jsonl
+.claude/*.cached*
+.claude/.DS_Store
