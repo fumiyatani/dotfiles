@@ -18,7 +18,7 @@ brew install stow
 3. Stowを使用してシンボリックリンクを作成
 ```bash
 cd dotfiles/
-stow claude tmux git
+stow claude tmux git zsh
 stow --target=$HOME homebrew
 ```
 
