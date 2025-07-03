@@ -12,6 +12,8 @@ brew "rustup"
 brew "stow"
 brew "tmux"
 brew "leoafarias/fvm/fvm"
+brew "jq"
+
 cask "visual-studio-code"
 cask "temurin@17"
 cask "rubymine"
