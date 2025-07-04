@@ -31,7 +31,8 @@
   psf = push --force-with-lease
   pl = pull 
   inps = push --set-upstream origin
-  cfl = config --list 
+  cfl = config --list
+  res = restore  
 
 [init]
 	defaultBranch = main
