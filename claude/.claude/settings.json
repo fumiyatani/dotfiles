@@ -28,7 +28,8 @@
         "Bash(git commit:*)",
         "Bash(git pull:*)",
         "Bash(fvm flutter pub get:*)",
-        "Bash(flutter pub get:*)"
+        "Bash(flutter pub get:*)",
+        "Bash(./gradlew:*)"
       ],
       "deny": [
         "Bash(sudo:*)",
