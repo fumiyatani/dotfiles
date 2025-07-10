@@ -56,5 +56,6 @@
         "Bash(flutter pub add:*)",
         "Bash(firebase deploy:*)"
       ]
-    }
+    },
+    "includeCoAuthoredBy": false
   }
