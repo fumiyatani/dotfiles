@@ -32,7 +32,10 @@
   pl = pull 
   inps = push --set-upstream origin
   cfl = config --list
-  res = restore  
+  res = restore
+  wora = worktree add
+  wore = worktree remove
+  worl = worktree list  
 
 [init]
 	defaultBranch = main
