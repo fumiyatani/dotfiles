@@ -33,7 +33,7 @@
   inps = push --set-upstream origin
   cfl = config --list
   res = restore
-  worka = worktree add
+  worka = worktree add -b
   workr = worktree remove
   workl = worktree list  
 
