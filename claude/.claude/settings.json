@@ -38,7 +38,9 @@
       "Bash(gh pr:*)",
       "Bash(fvm flutter pub get:*)",
       "Bash(flutter pub get:*)",
-      "Bash(./gradlew:*)"
+      "Bash(./gradlew:*)",
+      "mcp__redash-server__get_query",
+      "mcp__figma-remote-mcp__get_screenshot"
     ],
     "deny": [
       "Bash(sudo:*)",
