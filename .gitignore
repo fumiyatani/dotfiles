@@ -261,6 +261,13 @@ pip-delete-this-directory.txt
 # Claude Code Project Root Directory
 # ==========================================
 
+# Ignore all Claude runtime data (inside dotfiles)
+claude/.claude/**
+
+# Allow only managed Claude configs
+!claude/.claude/CLAUDE.md
+!claude/.claude/settings.json
+
 # Include essential configuration files first
 !.claude/CLAUDE.md
 !.claude/settings.json
