@@ -110,6 +110,7 @@ private/
 # Include essential configuration files first
 !claude/.claude/CLAUDE.md
 !claude/.claude/settings.json
+!claude/.claude/commands/*.md
 
 # Exclude auto-generated Claude directories and files
 claude/.claude/ide/
@@ -124,6 +125,9 @@ claude/.claude/sessions/
 claude/.claude/state/
 claude/.claude/data/
 claude/.claude/backups/
+claude/.claude/debug/
+claude/.claude/file-history/
+claude/.claude/shell-snapshots/
 
 # Exclude auto-generated file patterns
 claude/.claude/*.cache
