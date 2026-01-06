@@ -1,2 +1,2 @@
 # zsh-autosuggestions (Homebrew)
-source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
