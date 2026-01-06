@@ -1,35 +1,72 @@
 # dotfiles
 
-## 設定方法
+> Apple Silicon Mac 用の開発環境設定
 
-このリポジトリではGNU Stowを使用してシンボリックリンクを管理しています。
+## 管理している設定
 
-1. 本リポジトリをホームディレクトリにクローンする
+- **zsh**: Oh My Zsh + プラグイン（autosuggestions, completions, syntax-highlighting）
+- **Homebrew**: Brewfile で開発ツール・CLI・フォントを管理
+- **Claude Code**: カスタムコマンド・設定・MCP統合
+- **Git**: `.gitconfig` と `.gitignore_global`
+- **tmux**: `.tmux.conf`
+
+## セットアップ手順
+
+### 1. リポジトリをクローン
+
 ```bash
-cd ~/
-git clone <repo URL>
+cd ~
+git clone https://github.com/fumiyatani/dotfiles.git
+cd dotfiles
 ```
 
-2. GNU Stowをインストール
+### 2. Homebrew でパッケージをインストール
+
 ```bash
-brew install stow
+brew bundle --file=homebrew/Brewfile
 ```
 
-3. Stowを使用してシンボリックリンクを作成
+### 3. Oh My Zsh をインストール
+
 ```bash
-cd dotfiles/
-stow claude tmux git zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+### 4. GNU Stow で設定をリンク
+
+```bash
+stow claude git tmux zsh
 stow --target=$HOME homebrew
 ```
 
-**変更した設定を反映させる**
+### 5. シェルを再起動
+
 ```bash
-stow -R <対象パッケージ>
+exec zsh
 ```
 
-## 設定内容
+## 設定の更新方法
 
-- **Claude Code**: `.claude/` ディレクトリの設定
-- **Git**: `.gitconfig` と `.gitignore_global` の設定
-- **tmux**: `.tmux.conf` の設定
+### ファイルの内容を編集した場合
+
+既存ファイル（例: `.zshrc`）の内容を変更した場合は、シェルの再起動のみで反映されます。
+
+```bash
+exec zsh
+```
+
+### ファイルの追加・削除をした場合
+
+新しいファイルを追加、または既存ファイルを削除した場合は、リンクの再作成が必要です。
+
+```bash
+cd ~/dotfiles
+stow -R <パッケージ名>  # 例: stow -R zsh
+exec zsh
+```
+
+| 操作 | `stow -R` | `exec zsh` |
+|------|-----------|-----------|
+| ファイルの内容を編集 | 不要 | 必要 |
+| ファイルを追加・削除 | 必要 | 必要 |
 
