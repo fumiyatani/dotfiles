@@ -1,17 +1,9 @@
 ############################################################
-# 0) どの Mac でも先に Homebrew の bin を PATH の先頭へ
-############################################################
-for p in /opt/homebrew/bin /usr/local/bin; do
-  [[ -d $p ]] && PATH="$p:$PATH"
-done
-
-############################################################
 # 1) Homebrew の環境変数を読み込む
 ############################################################
+# Homebrew (Apple Silicon)
 if [[ -x /opt/homebrew/bin/brew ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
-elif [[ -x /usr/local/bin/brew ]]; then
-  eval "$(/usr/local/bin/brew shellenv)"
 fi
 
 ############################################################
