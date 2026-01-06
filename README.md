@@ -2,6 +2,10 @@
 
 > Apple Silicon Mac 用の開発環境設定
 
+## 前提条件
+
+- macOS（Apple Silicon）
+
 ## 管理している設定
 
 - **zsh**: Oh My Zsh + プラグイン（autosuggestions, completions, syntax-highlighting）
@@ -12,7 +16,13 @@
 
 ## セットアップ手順
 
-### 1. リポジトリをクローン
+### 1. Homebrew をインストール
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+### 2. リポジトリをクローン
 
 ```bash
 cd ~
@@ -20,26 +30,26 @@ git clone https://github.com/fumiyatani/dotfiles.git
 cd dotfiles
 ```
 
-### 2. Homebrew でパッケージをインストール
+### 3. Homebrew でパッケージをインストール
 
 ```bash
 brew bundle --file=homebrew/Brewfile
 ```
 
-### 3. Oh My Zsh をインストール
+### 4. Oh My Zsh をインストール
 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-### 4. GNU Stow で設定をリンク
+### 5. GNU Stow で設定をリンク
 
 ```bash
 stow claude git tmux zsh
 stow --target=$HOME homebrew
 ```
 
-### 5. シェルを再起動
+### 6. シェルを再起動
 
 ```bash
 exec zsh
