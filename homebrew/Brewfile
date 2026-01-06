@@ -1,29 +1,56 @@
 tap "leoafarias/fvm"
+
+# 基本ツール
 brew "gmp"
 brew "openssl@3"
 brew "libyaml"
+brew "stow"
+brew "tmux"
+brew "jq"
+
+# CLI ツール
+brew "gh"
+brew "node"
+brew "tree"
+brew "uv"
+brew "sl"  # 🚂
+
+# データベース
 brew "mongosh"
 brew "postgresql@14"
 brew "postgresql@15"
+
+# プログラミング言語環境
 brew "pyenv"
 brew "ruby-build"
 brew "rbenv"
 brew "rustup"
-brew "stow"
-brew "tmux"
 brew "leoafarias/fvm/fvm"
-brew "jq"
-brew "zsh-autosuggestions"
 
+# zsh プラグイン
+brew "zsh-autosuggestions"
+brew "zsh-completions"
+brew "zsh-syntax-highlighting"
+
+# 開発ツール
 cask "visual-studio-code"
-cask "temurin@17"
 cask "rubymine"
-cask "google-chrome"
-cask "claude"
-cast "chatgpt"
 cask "postman"
 cask "figma"
-cask "slack"
 cask "docker-desktop"
 cask "orbstack"
 cask "iterm2"
+
+# ブラウザ・コミュニケーション
+cask "google-chrome"
+cask "slack"
+
+# AI ツール
+cask "claude"
+cask "chatgpt"
+
+# その他
+cask "temurin@17"
+
+# フォント
+cask "font-jetbrains-mono-nerd-font"
