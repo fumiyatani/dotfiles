@@ -1,300 +1,62 @@
-# Dotfiles .gitignore
-# This file excludes common system files and auto-generated content
+# Dotfiles .gitignore (ホワイトリスト形式)
+# すべてのファイルを無視し、管理対象のみを明示的に許可する
 
 # ==========================================
-# Operating System Files
+# すべてを無視
 # ==========================================
-
-# macOS
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-.AppleDouble
-.LSOverride
-.DocumentRevisions-V100
-.fseventsd
-.TemporaryItems
-.VolumeIcon.icns
-.com.apple.timemachine.donotpresent
-
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
-*.cab
-*.msi
-*.msm
-*.msp
-*.lnk
-
-# Linux
-*~
-.fuse_hidden*
-.directory
-.Trash-*
-.nfs*
+/*
+/.**
 
 # ==========================================
-# Editor and IDE Files
+# プロジェクトルートのファイル
 # ==========================================
-
-# Vim
-*.swp
-*.swo
-*~
-.viminfo
-
-# Emacs
-*~
-\#*\#
-/.emacs.desktop
-/.emacs.desktop.lock
-*.elc
-auto-save-list
-tramp
-.\#*
-
-# VSCode
-.vscode/
-*.code-workspace
-
-# JetBrains IDEs
-.idea/
-*.iws
-*.iml
-*.ipr
-
-# Sublime Text
-*.sublime-project
-*.sublime-workspace
+!.gitignore
+!README.md
 
 # ==========================================
-# Backup and Temporary Files
+# claude ディレクトリ
 # ==========================================
-
-# Backup files
-*.bak
-*.backup
-*.orig
-*.tmp
-*.temp
-*~
-
-# Log files
-*.log
-logs/
-
-# ==========================================
-# dotfiles specific
-# ==========================================
-
-# Installation scripts logs
-install.log
-setup.log
-
-# Personal configuration that shouldn't be shared
-local/
-private/
-*.local
-*.private
-
-# ==========================================
-# Claude Code Directory Management
-# ==========================================
-
-# Include essential configuration files first
+!claude/
+claude/*
+!claude/.claude/
+claude/.claude/*
 !claude/.claude/CLAUDE.md
 !claude/.claude/settings.json
+!claude/.claude/commands/
+claude/.claude/commands/*
 !claude/.claude/commands/*.md
 
-# Exclude auto-generated Claude directories and files
-claude/.claude/ide/
-claude/.claude/projects/
-claude/.claude/statsig/
-claude/.claude/todos/
-claude/.claude/cache/
-claude/.claude/logs/
-claude/.claude/temp/
-claude/.claude/history/
-claude/.claude/sessions/
-claude/.claude/state/
-claude/.claude/data/
-claude/.claude/backups/
-claude/.claude/debug/
-claude/.claude/file-history/
-claude/.claude/shell-snapshots/
-
-# Exclude auto-generated file patterns
-claude/.claude/*.cache
-claude/.claude/*.log
-claude/.claude/*.tmp
-claude/.claude/*.lock
-claude/.claude/*.jsonl
-claude/.claude/*.cached*
-claude/.claude/.DS_Store
+# ==========================================
+# git ディレクトリ
+# ==========================================
+!git/
+git/*
+!git/.gitconfig_shared
+!git/.gitignore_global
+!git/.stCommitMsg
 
 # ==========================================
-# Development and Build Files
+# homebrew ディレクトリ
 # ==========================================
-
-# Node.js
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.npm
-.yarn-integrity
-.pnp.*
-
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-.Python
-*.so
-.pytest_cache/
-.coverage
-.venv/
-venv/
-env/
-
-# Ruby
-*.gem
-.bundle/
-vendor/bundle/
-.rbenv-version
-
-# Go
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-*.test
-*.out
-
-# Rust
-target/
-Cargo.lock
+!homebrew/
+homebrew/*
+!homebrew/Brewfile
 
 # ==========================================
-# Security and Credentials
+# tmux ディレクトリ
 # ==========================================
-
-# SSH keys
-id_rsa
-id_rsa.pub
-id_ed25519
-id_ed25519.pub
-*.pem
-*.key
-
-# Environment variables
-.env
-.env.local
-.env.*.local
-
-# API keys and tokens
-*.token
-*.secret
-secrets/
-credentials/
-
-# GPG
-*.asc
-*.gpg
-secring.*
+!tmux/
+tmux/*
+!tmux/.tmux.conf
 
 # ==========================================
-# Package Managers
+# zsh ディレクトリ
 # ==========================================
-
-# Homebrew
-Brewfile.lock.json
-
-# pip
-pip-log.txt
-pip-delete-this-directory.txt
-
-# ==========================================
-# Other Common Files
-# ==========================================
-
-# Archives
-*.zip
-*.tar.gz
-*.rar
-*.7z
-
-# Image files (usually not needed in dotfiles)
-*.jpg
-*.jpeg
-*.png
-*.gif
-*.bmp
-*.svg
-*.ico
-
-# Media files
-*.mp3
-*.mp4
-*.avi
-*.mov
-*.wav
-
-# Documents (if not intentionally included)
-*.pdf
-*.doc
-*.docx
-
-# ==========================================
-# Custom Additions
-# ==========================================
-
-# Add your custom ignore patterns here
-# Example:
-# my-custom-file.txt
-# custom-directory/
-
-# ==========================================
-# Claude Code Project Root Directory
-# ==========================================
-
-# Ignore all Claude runtime data (inside dotfiles)
-claude/.claude/**
-
-# Allow only managed Claude configs
-!claude/.claude/CLAUDE.md
-!claude/.claude/settings.json
-
-# Include essential configuration files first
-!.claude/CLAUDE.md
-!.claude/settings.json
-
-# Exclude auto-generated Claude directories and files
-.claude/ide/
-.claude/projects/
-.claude/statsig/
-.claude/todos/
-.claude/cache/
-.claude/logs/
-.claude/temp/
-.claude/history/
-.claude/sessions/
-.claude/state/
-.claude/data/
-.claude/backups/
-
-# Exclude auto-generated file patterns
-.claude/*.cache
-.claude/*.log
-.claude/*.tmp
-.claude/*.lock
-.claude/*.jsonl
-.claude/*.cached*
-.claude/.DS_Store
+!zsh/
+zsh/*
+!zsh/.zprofile
+!zsh/.zshenv
+!zsh/.zshrc
+!zsh/.zsh/
+zsh/.zsh/*
+!zsh/.zsh/*.zsh
