@@ -1,7 +1,8 @@
-# oh my zsh 
-export ZSH="$HOME/.oh-my-zsh"
-plugins=(git)
-source $ZSH/oh-my-zsh.sh
+# Load oh my zsh 
+[[ -f "$HOME/.zsh/omz.zsh" ]] && source "$HOME/.zsh/omz.zsh"
+
+# Load brew-managed zsh plugins
+[[ -f "$HOME/.zsh/brew-plugins.zsh" ]] && source "$HOME/.zsh/brew-plugins.zsh"
 
 ################################
 # Aliases
@@ -72,7 +73,4 @@ PROMPT='%F{cyan}%n@%m%f %F{green}%~%f ${GIT_DISPLAY} %# '
 # zsh local settings
 ################################
 [[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
-
-# auto suggestion 
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
