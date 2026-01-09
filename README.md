@@ -13,6 +13,7 @@
 - **Claude Code**: カスタムコマンド・設定・MCP統合
 - **Git**: `.gitconfig` と `.gitignore_global`
 - **tmux**: `.tmux.conf`
+- **iTerm2**: Option キーの設定
 
 ## セットアップ手順
 
@@ -45,11 +46,17 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ### 5. GNU Stow で設定をリンク
 
 ```bash
-stow claude git tmux zsh
+stow claude git iterm2 tmux zsh
 stow --target=$HOME homebrew
 ```
 
-### 6. シェルを再起動
+### 6. iTerm2 の設定を適用
+
+```bash
+./iterm2/setup-iterm2.sh
+```
+
+### 7. シェルを再起動
 
 ```bash
 exec zsh
