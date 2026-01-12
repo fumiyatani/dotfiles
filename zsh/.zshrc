@@ -7,6 +7,9 @@
 # Load user-defined aliases
 [[ -f "$HOME/.zsh/user-aliases.zsh" ]] && source "$HOME/.zsh/user-aliases.zsh"
 
+# Load user key bindings
+[[ -f "$HOME/.zsh/user-key-bind.zsh" ]] && source "$HOME/.zsh/user-key-bind.zsh"
+
 ################################
 # Completion
 ################################

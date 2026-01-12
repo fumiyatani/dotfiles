@@ -21,10 +21,13 @@ dotfiles/
 │   └── .zsh/         # モジュール化された設定
 │       ├── omz.zsh
 │       ├── brew-plugins.zsh
-│       └── user-aliases.zsh
+│       ├── user-aliases.zsh
+│       └── user-key-bind.zsh
 ├── git/              # Git設定パッケージ
 │   ├── .gitconfig_shared
 │   └── .gitignore_global
+├── iterm2/           # iTerm2設定パッケージ
+│   └── setup-iterm2.sh
 ├── tmux/             # Tmux設定パッケージ
 │   └── .tmux.conf
 ├── claude/           # Claude Code設定パッケージ
@@ -41,8 +44,8 @@ dotfiles/
 
 - **omz.zsh**: Oh My Zsh の設定
 - **brew-plugins.zsh**: Homebrew でインストールされた zsh プラグイン
-- **user-aliases.zsh**: ユーザー定義のエイリアス（Git, Docker, PostgreSQL, Firebase, FVM/Flutter）
-- 今後追加予定: `completions.zsh`, `prompt.zsh`
+- **user-aliases.zsh**: ユーザー定義のエイリアス
+- **user-key-bind.zsh**: ユーザー定義のキーバインディング（Alt+矢印キーで単語移動）
 
 `.zshrc` ファイルは各モジュールを条件付き (`[[ -f ... ]] && source ...`) で読み込むだけのシンプルな構造です。
 
@@ -66,8 +69,11 @@ brew bundle --file=homebrew/Brewfile
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # GNU Stow で設定をリンク
-stow claude git tmux zsh
+stow claude git iterm2 tmux zsh
 stow --target=$HOME homebrew
+
+# iTerm2 の設定を適用
+./iterm2/setup-iterm2.sh
 
 # シェルを再起動
 exec zsh
