@@ -22,3 +22,6 @@ alias f='fvm'
 alias ff='fvm flutter'
 alias fd='fvm dart'
 alias fdb='fvm dart run build_runner build -d'
+
+# vi
+alias vi='vim'

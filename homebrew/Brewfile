@@ -7,6 +7,7 @@ brew "libyaml"
 brew "stow"
 brew "tmux"
 brew "jq"
+brew "vim"
 
 # CLI ツール
 brew "gh"
