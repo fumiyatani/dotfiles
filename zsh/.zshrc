@@ -64,7 +64,8 @@ precmd () {
   fi
 }
 
-PROMPT='%F{cyan}%n@%m%f %F{10}%~%f ${GIT_DISPLAY} %# '
+PROMPT='%F{cyan}%n@%m%f %F{10}%~%f ${GIT_DISPLAY}
+>> '
 
 ################################
 # zsh local settings
