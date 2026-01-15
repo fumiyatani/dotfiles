@@ -52,7 +52,13 @@ precmd () {
       [[ $BEHIND -gt 0 ]] && BEHIND_STR="%F{blue}⇣${BEHIND}%f"
     fi
 
-    GIT_DISPLAY="[(%F{white}${BRANCH_NAME}%f) ${ADDED_STR}${REMOVED_STR}${AHEAD_STR}${BEHIND_STR}]"
+    # 情報がある場合のみスペースを追加
+    INFO_STR="${ADDED_STR}${REMOVED_STR}${AHEAD_STR}${BEHIND_STR}"
+    if [[ -n "$INFO_STR" ]]; then
+      GIT_DISPLAY="[(%F{white}${BRANCH_NAME}%f) ${INFO_STR}]"
+    else
+      GIT_DISPLAY="[(%F{white}${BRANCH_NAME}%f)]"
+    fi
   else
     GIT_DISPLAY=""
   fi
