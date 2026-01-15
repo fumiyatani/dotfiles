@@ -42,13 +42,23 @@ precmd () {
     [[ $ADDED   -gt 0 ]] && ADDED_STR="%F{green}+${ADDED}%f"
     [[ $REMOVED -gt 0 ]] && REMOVED_STR="%F{red}-${REMOVED}%f"
 
-    GIT_DISPLAY="(${BRANCH_NAME}${ADDED_STR}${REMOVED_STR})"
+    # ahead/behind 情報を取得
+    AHEAD_STR=""
+    BEHIND_STR=""
+    if git rev-parse --abbrev-ref @{u} &>/dev/null; then
+      AHEAD=$(git rev-list --count @{u}..HEAD 2>/dev/null)
+      BEHIND=$(git rev-list --count HEAD..@{u} 2>/dev/null)
+      [[ $AHEAD  -gt 0 ]] && AHEAD_STR="%F{yellow}⇡${AHEAD}%f"
+      [[ $BEHIND -gt 0 ]] && BEHIND_STR="%F{blue}⇣${BEHIND}%f"
+    fi
+
+    GIT_DISPLAY="[(%F{white}${BRANCH_NAME}%f) ${ADDED_STR}${REMOVED_STR}${AHEAD_STR}${BEHIND_STR}]"
   else
     GIT_DISPLAY=""
   fi
 }
 
-PROMPT='%F{cyan}%n@%m%f %F{green}%~%f ${GIT_DISPLAY} %# '
+PROMPT='%F{cyan}%n@%m%f %F{10}%~%f ${GIT_DISPLAY} %# '
 
 ################################
 # zsh local settings
