@@ -51,11 +51,32 @@ dotfiles/
 
 ### Custom Claude Commands
 
-`.claude/commands/` に以下のカスタムコマンドが定義されています：
-
 - **self-review**: 現在のブランチの変更内容を体系的にレビュー
 - **pr-create**: PR テンプレートを参照し、Git 情報を元に PR を作成
 - **retro**: タスク完了後の振り返りと Claude Code 設定全体の改善提案
+- **statusline-test**: statusline.sh の動作テスト
+
+### Claude Code 設定のスコープ判断
+
+このリポジトリは GNU Stow で管理されているため、配置場所に注意が必要です。
+
+#### ユーザー固有の設定
+- **配置**: `claude/.claude/` 内
+- **展開先**: `~/.claude/`（Stow により）
+- **用途**: 全プロジェクトで使う汎用的なコマンド・設定
+- **例**:
+  - カスタムコマンド: `/self-review`, `/pr-create`, `/retro`, `/statusline-test`
+  - 設定ファイル: `settings.json`, `statusline.sh`
+
+#### プロジェクト固有の設定
+- **配置**: `.claude/` 内（リポジトリルート直下）
+- **展開先**: そのまま `.claude/`
+- **用途**: dotfiles リポジトリ専用のコマンド・設定
+- **例**: 現在は使用していない
+
+#### 判断基準
+- **ユーザー固有**: 他のプロジェクトでも使う、個人の作業スタイルに依存する
+- **プロジェクト固有**: dotfiles リポジトリでのみ使う、チームで共有すべき
 
 ## Common Development Tasks
 
