@@ -19,6 +19,7 @@
 # ==========================================
 !claude/
 claude/*
+!claude/setup-claude.sh
 !claude/.claude/
 claude/.claude/*
 !claude/.claude/CLAUDE.md

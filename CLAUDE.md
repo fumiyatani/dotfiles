@@ -96,6 +96,9 @@ stow --target=$HOME homebrew
 # iTerm2 の設定を適用
 ./iterm2/setup-iterm2.sh
 
+# Claude Code の設定を適用
+./claude/setup-claude.sh
+
 # シェルを再起動
 exec zsh
 ```
