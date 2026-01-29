@@ -69,5 +69,9 @@
       "Bash(firebase deploy:*)"
     ]
   },
-  "model": "opusplan"
+  "model": "opusplan",
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  }
 }
