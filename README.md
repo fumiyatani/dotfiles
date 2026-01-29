@@ -59,7 +59,7 @@ stow --target=$HOME homebrew
 ### 7. Claude Code の設定を適用
 
 ```bash
-./iterm2/setup-claude.sh
+./claude/.claude/setup-claude.sh
 ```
 
 ### 8. シェルを再起動
